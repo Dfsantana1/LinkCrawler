@@ -49,3 +49,8 @@ print("Starting the scraping process...")
 data = scrape_data(url, follow_links)
 for url, text in data.items():
     print(f"URL: {url}\nText: {text}\n")
+
+#savw data to file 
+with open('scraped_data.txt', 'w', encoding='utf-8') as f:
+    for url, text in data.items():
+        f.write(f"URL: {url}\nText: {text}\n\n")
